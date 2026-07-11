@@ -1,0 +1,303 @@
+/* ---------- GENERAL ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#ffd6e8,#ffeef6,#fff7fb);
+    overflow-x:hidden;
+    color:#4d2a38;
+}
+
+/* Loading */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#ffd9eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    z-index:9999;
+    animation:fadeOut 2s forwards;
+    animation-delay:1.5s;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* ---------- PASSCODE ---------- */
+
+#lockScreen{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#ffd5e6,#fff2f8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:500;
+}
+
+.glass{
+    width:90%;
+    max-width:360px;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(20px);
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.glass h1{
+    font-family:'Great Vibes',cursive;
+    font-size:52px;
+    color:#ff4d94;
+}
+
+.glass p{
+    margin:18px 0;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#ff5f9d;
+    color:white;
+    font-size:17px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.04);
+    background:#ff3c86;
+}
+
+/* ---------- WEBSITE ---------- */
+
+#website{
+    display:none;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+header h1{
+    font-family:'Great Vibes',cursive;
+    font-size:75px;
+    color:#ff4d94;
+}
+
+header h2{
+    font-size:35px;
+    margin-top:10px;
+}
+
+.scroll{
+    margin-top:40px;
+    animation:bounce 2s infinite;
+    color:#ff4d94;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+}
+
+/* ---------- PHOTO ---------- */
+
+.photoSection{
+    display:flex;
+    justify-content:center;
+    padding:80px 20px;
+}
+
+.photoCard{
+    width:320px;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(255,105,180,.3);
+    transition:.5s;
+}
+
+.photoCard:hover{
+    transform:scale(1.04);
+}
+
+.photoCard img{
+    width:100%;
+    display:block;
+}
+
+/* ---------- LETTER ---------- */
+
+.letter{
+    width:min(800px,90%);
+    margin:auto;
+    padding:70px 30px;
+    background:white;
+    border-radius:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    line-height:2;
+    margin-bottom:80px;
+}
+
+.letter h1{
+    font-size:55px;
+    text-align:center;
+}
+
+.letter h2{
+    font-family:'Great Vibes',cursive;
+    color:#ff4d94;
+    text-align:center;
+    font-size:52px;
+    margin-bottom:35px;
+}
+
+.letter p{
+    font-size:18px;
+}
+
+/* ---------- ANNIVERSARY ---------- */
+
+.anniversary{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.anniversary h2{
+    color:#ff4d94;
+    margin-bottom:20px;
+}
+
+.anniversary h1{
+    font-size:55px;
+}
+
+.anniversary p{
+    margin-top:20px;
+}
+
+/* ---------- MUSIC ---------- */
+
+.music{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.music h2{
+    font-size:55px;
+}
+
+.music p{
+    margin:25px 0;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    padding:80px 30px;
+    text-align:center;
+}
+
+footer h1{
+    font-family:'Great Vibes',cursive;
+    color:#ff4d94;
+    font-size:58px;
+}
+
+footer p{
+    margin-top:15px;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.heart{
+    position:fixed;
+    font-size:20px;
+    animation:floatUp 6s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-100vh) scale(1.8);
+        opacity:0;
+    }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px){
+
+header h1{
+    font-size:55px;
+}
+
+header h2{
+    font-size:28px;
+}
+
+.letter h2{
+    font-size:38px;
+}
+
+.letter{
+    padding:45px 20px;
+}
+
+footer h1{
+    font-size:45px;
+}
+
+.photoCard{
+    width:90%;
+}
+
+}
